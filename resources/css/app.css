@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/* Old Money Aesthetic - Custom Styles */
+@theme {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  
+  --color-old-money-white: #FAFAFA;
+  --color-old-money-cream: #F5F0EB;
+  --color-old-money-beige: #E8E0D5;
+  --color-old-money-gray: #6B6B6B;
+  --color-old-money-charcoal: #2C2C2C;
+  --color-old-money-black: #1A1A1A;
+}
+
+/* Custom base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-old-money-charcoal);
+    background-color: var(--color-old-money-white);
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom components */
+@layer components {
+  .btn-primary {
+    background-color: var(--color-old-money-charcoal);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--color-old-money-black);
+  }
+  
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .btn-secondary {
+    border: 1px solid var(--color-old-money-charcoal);
+    color: var(--color-old-money-charcoal);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0;
+    transition: all 0.3s;
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--color-old-money-charcoal);
+    color: white;
+  }
+  
+  .input-field {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    padding: 0.75rem 1rem;
+    border-radius: 0;
+    transition: all 0.2s;
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: var(--color-old-money-charcoal);
+    box-shadow: 0 0 0 1px var(--color-old-money-charcoal);
+  }
+  
+  .card {
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Elegant scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
